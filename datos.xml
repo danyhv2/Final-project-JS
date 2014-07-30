@@ -1,0 +1,18 @@
+<datos>
+	<mascota>
+		<tipo>perro</tipo>
+		<nombre>Oso</nombre>
+		<raza>zaguate</raza>
+		<edad>14 años</edad>
+	</mascota>
+	<yo>
+		<nombre>Daniela</nombre>
+		<edad>25 años</edad>
+		<direccion>Pavas</direccion>
+	</yo>
+	<companero>
+		<nombre>Edgar</nombre>
+		<edad>36 años</edad>
+		<direccion>Vargas Araya</direccion>
+	</companero>
+</datos>
