@@ -1,0 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display);
+@import url(http://fonts.googleapis.com/css?family=Philosopher);
+@import url(http://fonts.googleapis.com/css?family=Pontano+Sans);
+body,div,img,h1,h3{margin:0;padding:0}
+
+body{
+	/*background:-webkit-radial-gradient(center,circle,rgb(208, 219, 137), rgb(185, 190, 4)) center fixed;
+	background: -webkit-radial-gradient(center,circle,#7fb12e, #447026) center fixed*/
+	background-color: #447026;
+	/*font-family: 'Playfair Display', serif;*/
+	/*font-family: 'Philosopher', sans-serif;*/
+	font-family: 'Pontano Sans', sans-serif;
+}
+.img-home{
+	position: absolute;
+}
+.imgHome{
+	background-image:url('../img/home3.jpg');
+	box-shadow: #447026 0px 0px 3em 1em inset;
+}
+
+.caption p{
+	text-align: justify;
+	line-height: 1.8;
+}
+
+.border{
+	border:2px solid;
+}
+.actTitle{
+	padding-left: 15px;
+}
+.actText{
+	text-align: justify;
+}
+footer{
+	height: 100px;
+	width: 100%;
+	border:2px solid;
+}
