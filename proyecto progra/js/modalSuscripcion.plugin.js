@@ -26,12 +26,12 @@
 
 							$('.suscriptionDialog').append($('<span></span>').addClass('glyphicon glyphicon-remove-circle close'));
 
-							$('.suscriptionDialog').append($('<div>'+'<h2 class="txtTitulo">'+'NEWSLETTER'+'</h2>'+'</div>').addClass('text-center'));
+							$('.suscriptionDialog').append($('<h2 class="txtTitulo">'+'NEWSLETTER'+'</h2>').addClass('text-center'));
 
 							$('.suscriptionDialog').append($('<input type="text" placeholder="Nombre">').addClass('txtSuscripcion').addClass('form-control input-lg'));
 							$('.suscriptionDialog').append($('<input type="text" placeholder="Apellido">').addClass('txtSuscripcion').addClass('form-control input-lg'));
-							$('.suscriptionDialog').append($('<input type="text" placeholder="Correo electrónico">').addClass('txtSuscripcion').addClass('form-control input-lg'));
-							$('.suscriptionDialog').append($('<label>'+'<input type="checkbox">'+'  Acepto recibir información por email.'+'</label>').addClass('txtAceptacion'));
+							$('.suscriptionDialog').append($('<input type="email" placeholder="Correo electrónico">').addClass('txtSuscripcion').addClass('form-control input-lg'));
+							$('.suscriptionDialog').append($('<label>'+'<input class="chkaceptacion" type="checkbox">'+'  Acepto recibir información por email.'+'</label>').addClass('txtAceptacion'));
 
 							$('.suscriptionDialog').append($('<button class="btnSuscripcion" type="button">'+'Suscribirme'+'</button>').addClass('btn btn-success btn-lg pull-right'));
 
@@ -43,6 +43,51 @@
 					$('.close').click(function(){
 						$('.suscriptionDialog').remove();
 						$('.suscriptionShadow').remove();
+					});
+
+					var llenado = false;
+					var acepte = false;
+
+					$('.btnSuscripcion').click(function(){
+						var campoTxt = $('.txtSuscripcion');
+						var cont = 0;
+						for (var i = 0; i < campoTxt.length; i++) {
+							if(campoTxt[i].value == ''){
+								console.log('campo '+i+' vacio');
+							} else {
+								cont = cont + 1;
+							};
+						};
+
+						if($(".chkaceptacion").prop("checked")) {
+						     console.log("Checkbox is checked");
+						     var box = 1;
+						     acepte = false;
+						     $('.txtAcepte').remove();
+						} else {
+						    console.log("Checkbox is unchecked");
+							if(acepte == false){
+							    $(".chkaceptacion").parent().append($('<p class="txtAcepte">'+' Por favor indique si está de acuerdo.'+'</p>'));
+							    acepte = true;
+							}
+						}				
+
+						console.log('el cont es '+cont);
+						if ((cont == 3) && (box == 1)) {
+							$('.suscriptionDialog').remove();
+							$('.suscriptionShadow').remove();
+						} else {
+							if (cont == 3){
+								$('.txtLlenado').remove();
+								llenado = false;
+							} else {
+								if(llenado == false){
+									$(".chkaceptacion").parent().append($('<p class="txtLlenado">'+' Por favor llene todos los campos.'+'</p>'));
+									llenado = true;
+								}
+							}
+						}
+
 					});
 
 					});

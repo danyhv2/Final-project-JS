@@ -87,6 +87,20 @@ footer{
 	margin-bottom: 1em;
 }
 
+.txtAcepte {
+	color: red;
+	font-size: 1em !important;
+	text-align: right;
+	line-height: 0.75em;
+}
+
+.txtLlenado {
+	color: red;
+	font-size: 1em !important;
+	text-align: right;
+	line-height: 0.75em;
+}
+
 /*************************************/
 
 
