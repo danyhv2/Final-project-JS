@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html ng-app="MyApp">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Actividades</title>        
+        <link rel="stylesheet" href="css/bootstrap.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        
+    </head>
+
+<body ng-controller="empCtrl">       
+    <header>
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a class="menu-link" href="index.html">Home</a></li>
+                    <li><a class="menu-link" href="index.html">Activities</a></li>
+                    <li><a class="menu-link" href="index.html">Gallery</a></li>             
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 border">
+                <h2>Busqueda</h2>
+                <div class="form-group col-x2-12 col-sm-4 col-md-4 col-lg-12">
+                      <label class="control-label" for="place">Lugares:</label>
+                        <select id="place" class="form-control" ng-model="query" placeholder="Seleccione una provincia">
+                          <!--<option ng-repeat="act in activities">{{act.place}}</option>-->
+                          <option selected="selected">Alajuela</option>
+                          <option>San Jose</option>
+                          <option>Cartago</option>
+                          <option>Limon</option>
+                          <option>Guanacaste</option>
+                          <option>Puntarenas</option>
+                          <option>Heredia</option>
+                        </select>                          
+                    </div>
+                    <div class="form-group col-x2-12 col-sm-4 col-md-4 col-lg-12">
+                      <label class="control-label" for="activity">Actividades:</label>
+                        <select id="activity" class="form-control" ng-model="query">
+                          <!--<option ng-repeat="act in activities">{{act.activity}}</option>-->
+                          <option>Rafting</option>
+                          <option>Tour a caballo</option>
+                          <option>Globo Aerostático</option>
+                          <option>Paracaidismo</option>
+                          <option>Canopy</option>
+                          <option>Buceo</option>
+                          <option>Snorkeling</option>
+                          <option>Rappel</option>
+                          <option>Rock Climbing</option>
+                        </select>                          
+                    </div>
+                    <div class="form-group col-x2-12 col-sm-4 col-md-4 col-lg-12">
+                      <label class="control-label" for="sltEstadoCivil">Precios:</label>
+                        <select id="sltEstadoCivil" tabindex="4" class="form-control">
+                          <option>$50-$100</option>
+                          <option>$100-$200</option>
+                          <option>$200-$300</option>
+                        </select>                          
+                    </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-offset-1 col-lg-7 border">
+              <h1>Qué actividades desea hacer?</h1>
+              <!--iv class="row" ng-repeat="act in activities | filter:queryFilter | startFrom:currentPage*pageSize | limitTo:pageSize"> -->
+                <div ng-repeat="act in activities | filter:queryFilter | startFrom:currentPage*pageSize | limitTo:pageSize" class="col-sm-9 col-sm-offset-2 col-md-offset-0 col-md-6 col-lg-offset-0 col-lg-12">
+                    <h2 class="actTitle">{{act.activity}}</h2>
+                    <img src="{{act.image}}" alt="Imagen canopy" class="img-rounded col-xs-12 col-lg-4">
+                    <p class="col-lg-8 actText">{{act.description}}</p>
+                    <label>Precio por persona: {{act.price}}</label>
+                    <div class="col-lg-7">
+                        <h3>Qué llevar??</h3>
+                        <ul>
+                          <li ng-repeat="det in act.details">{{det}}</li>
+                        </ul>
+                    </div>
+                </div>
+              <!--</div>-->
+                <div class="row">
+                 <!-- <ul class="pager">
+                      <li ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><a href="#">&laquo;</a></li>
+                        {{currentPage+1}}/{{numberOfPages()}}
+                      <li ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1"><a href="#">&raquo;</a></li>
+                  </ul>-->
+                  <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        Previous
+    </button>
+    {{currentPage+1}}/{{numberOfPages()}}
+    <button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+        Next
+    </button>   
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="col-lg-12"></footer>
+
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+            <script src="js/app.js"></script> 
+            <script type="text/javascript" src="js/jquery.js"></script>
+            <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        </body>
+
+</html>

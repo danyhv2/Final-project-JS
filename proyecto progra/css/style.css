@@ -1,0 +1,107 @@
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display);
+@import url(http://fonts.googleapis.com/css?family=Philosopher);
+@import url(http://fonts.googleapis.com/css?family=Pontano+Sans);
+body,div,img,h1,h3{margin:0;padding:0}
+
+body{
+	/*background:-webkit-radial-gradient(center,circle,rgb(208, 219, 137), rgb(185, 190, 4)) center fixed;
+	background: -webkit-radial-gradient(center,circle,#7fb12e, #447026) center fixed*/
+	background-color: #447026;
+	/*font-family: 'Playfair Display', serif;*/
+	/*font-family: 'Philosopher', sans-serif;*/
+	font-family: 'Pontano Sans', sans-serif;
+}
+.img-home{
+	position: absolute;
+}
+.imgHome{
+	background-image:url('../img/home3.jpg');
+	box-shadow: #447026 0px 0px 3em 1em inset;
+}
+
+.caption p{
+	text-align: justify;
+	line-height: 1.8;
+}
+
+.border{
+	border:2px solid;
+}
+.actTitle{
+	padding-left: 15px;
+}
+.actText{
+	text-align: justify;
+}
+footer{
+	height: 100px;
+	width: 100%;
+	border:2px solid;
+}
+
+
+/*****  Modal Dialog Suscripción *****/
+
+.suscriptionDialog {
+	min-width: 300px;
+	min-height: 300px;
+	background-color: #d7ff00;
+	z-index: 1001;
+	position: absolute;
+	top: 3em;
+}
+
+.suscriptionShadow {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 120%;
+	background-color: #051F04;
+	filter: alpha(opacity=65);
+	-moz-opacity: 0.65;
+	opacity: 0.75;
+	z-index: 1000;
+}
+
+.txtTitulo {
+	color: #447026;
+	font-weight: bold !important;
+	line-height: 2em;
+	padding: 0;
+}
+
+.txtSuscripcion {
+	margin-bottom: 1em;
+}
+
+.txtAceptacion {
+	font-weight: normal;
+	font-size: 0.75em;
+	margin-bottom: 1em;
+	display: block;
+}
+
+.btnSuscripcion {
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+
+.txtAcepte {
+	color: red;
+	font-size: 1em !important;
+	text-align: right;
+	line-height: 0.75em;
+}
+
+.txtLlenado {
+	color: red;
+	font-size: 1em !important;
+	text-align: right;
+	line-height: 0.75em;
+}
+
+/*************************************/
+
+
+
